@@ -77,7 +77,7 @@ TRON provides several shell-generation and execution techniques.
 
 TRON was tested against a fully updated Windows 11 installation with Microsoft Defender enabled.
 
-https://github.com/user-attachments/assets/e2a11089-c6eb-411e-bbb8-b569ed452962
+https://github.com/user-attachments/assets/7ddde090-9356-4b63-94ec-b5db7a10561e
 
 🔊 ***We strongly encourage the community to test TRON against various AV solutions across different environments. Feel free to share your testing results, report bugs, or open issues on GitHub or social media so we can continue updating and improving the tool.***
 
