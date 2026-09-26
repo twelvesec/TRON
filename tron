@@ -1945,7 +1945,7 @@ if [[ $new_techniques == 1 ]]
 then
 echo -e "${blue}[*]${endc} The following file is our malicious exe:"
 echo -e """
-${cyan}${server_path}$dropper${endc} -> this is our executable
+${cyan}${server_path}$dropper.exe${endc} -> this is our executable
 """
 else
 echo -e "${blue}[*]${endc} The following files have been created:"
@@ -1953,7 +1953,7 @@ echo -e """
 ${cyan}${server_path}$shiptar${endc}  -> this is our passphrase
 ${cyan}${server_path}$crashme${endc}  -> this is the amsi crasher
 ${cyan}${server_path}$trojan${endc}  -> this is the shell payload
-${cyan}${server_path}$dropper${endc} -> this is our executable
+${cyan}${server_path}$dropper.exe${endc} -> this is our executable
 """
 fi
 
