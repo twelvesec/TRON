@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-v1.7.5-blue.svg" alt="Version">
+  <img src="https://img.shields.io/badge/version-v1.7.6-blue.svg" alt="Version">
   <img src="https://img.shields.io/badge/language-bash-green.svg" alt="Bash">
   <img src="https://img.shields.io/badge/language-rust-orange.svg" alt="Rust">
   <img src="https://img.shields.io/badge/language-powershell-blueviolet.svg" alt="PowerShell">
@@ -22,6 +22,15 @@
 **TRON** is a hacking tool designed to deploy **Windows reverse cmd, PowerShell, and Meterpreter shells** utilizing AMSI and AV evasion techniques.
 
 Originally developed for internal penetration tests, TRON was built to reliably bypass antivirus controls and establish reverse shells during authorized assessments. **TwelveSec** recently recovered this tool from their archives and is publishing it for the security community to use for research, education, and fun.❤️
+
+---
+
+## 📝 Changelog
+
+### [v1.7.6]
+- **Added:** Internet connectivity check. (Rust payload compilation requires an active connection, so the tool now verifies this before proceeding).
+- **Changed:** Made `apache2` and `xclip` optional dependencies, as they are not strictly required for core execution.
+- **Fixed:** General bug fixes and stability improvements.
 
 ---
 
@@ -142,10 +151,10 @@ Once downloaded, the payload is decrypted in memory and executed, establishing a
 
 ## 🗺️ ToDo / Roadmap
 
-- [ ] Add an offline mode (skip update checks if the host lacks internet access).
 - [ ] Implement a ZIP packer option for payloads.
 - [ ] Implement an ISO packer option for payloads.
 - [ ] Develop new undetectable (FUD) Meterpreter evasion techniques.
+- [ ] To support Mac
 
 ---
 

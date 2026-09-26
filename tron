@@ -39,6 +39,8 @@ meter_flag=0
 new_techniques=0
 payloads="generic/shell_reverse_tcp"
 msf_theme_file="/root/.msf4/config"
+has_apache2=1
+has_xclip=1
 
 
 #randome variable generator functions
@@ -229,7 +231,7 @@ function banner(){
 
 
 
-.5
+.6
 
 $endc"""
 sleep 0.05
@@ -239,7 +241,7 @@ clear
 
 
 
-.7.5
+.7.6
 
 $endc"""
 sleep 0.05
@@ -249,7 +251,7 @@ clear
  / /
 / /
  /
-/ v1.7.5
+/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -259,7 +261,7 @@ __   __
   | / /
   |/ /
 /|  /
- |_/ v1.7.5
+ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -269,7 +271,7 @@ ______   __
  \__  | / /
  /_   |/ /
 /_  /|  /
- /_/ |_/ v1.7.5
+ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -279,7 +281,7 @@ ________   __
 __ \__  | / /
  / /_   |/ /
 / /_  /|  /
-_/ /_/ |_/ v1.7.5
+_/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -289,7 +291,7 @@ __________   __
   __ \__  | / /
  / / /_   |/ /
 /_/ /_  /|  /
-___/ /_/ |_/ v1.7.5
+___/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -301,7 +303,7 @@ ____________   __
 \_  __ \__  | / /
 /  / / /_   |/ /
 / /_/ /_  /|  /
-\____/ /_/ |_/ v1.7.5
+\____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -312,7 +314,7 @@ ______________   __
 _ \_  __ \__  | / /
 / /  / / /_   |/ /
 _// /_/ /_  /|  /
-| \____/ /_/ |_/ v1.7.5
+| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -323,7 +325,7 @@ ________________   __
  __ \_  __ \__  | / /
 /_/ /  / / /_   |/ /
 , _// /_/ /_  /|  /
-|_| \____/ /_/ |_/ v1.7.5
+|_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -334,7 +336,7 @@ ___________________   __
 __  __ \_  __ \__  | / /
 _  /_/ /  / / /_   |/ /
   _, _// /_/ /_  /|  /
-_/ |_| \____/ /_/ |_/ v1.7.5
+_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -346,7 +348,7 @@ ______________________   __
 __/__  __ \_  __ \__  | / /
   __  /_/ /  / / /_   |/ /
   _  _, _// /_/ /_  /|  /
-  /_/ |_| \____/ /_/ |_/ v1.7.5
+  /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -357,7 +359,7 @@ ________________________   __
   __/__  __ \_  __ \__  | / /
  /  __  /_/ /  / / /_   |/ /
 /   _  _, _// /_/ /_  /|  /
-    /_/ |_| \____/ /_/ |_/ v1.7.5
+    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -368,7 +370,7 @@ __________________________   __
 __  __/__  __ \_  __ \__  | / /
 _  /  __  /_/ /  / / /_   |/ /
   /   _  _, _// /_/ /_  /|  /
-_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -380,7 +382,7 @@ ____________________________   __
 ____  __/__  __ \_  __ \__  | / /
 ___  /  __  /_/ /  / / /_   |/ /
 __  /   _  _, _// /_/ /_  /|  /
-_/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -391,7 +393,7 @@ ______________________________   __
 ______  __/__  __ \_  __ \__  | / /
 _____  /  __  /_/ /  / / /_   |/ /
 ____  /   _  _, _// /_/ /_  /|  /
-___/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+___/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -402,7 +404,7 @@ ________________________________   __
 ________  __/__  __ \_  __ \__  | / /
 _______  /  __  /_/ /  / / /_   |/ /
 ______  /   _  _, _// /_/ /_  /|  /
-_____/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_____/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -414,7 +416,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 
@@ -429,7 +431,7 @@ function pride_banner(){
 
 
 
-.5
+.6
 
 $endc"""
 sleep 0.05
@@ -439,7 +441,7 @@ clear
 
 
 
-.7.5
+.7.6
 
 $endc"""
 sleep 0.05
@@ -449,7 +451,7 @@ clear
  / /
 / /
  /
-/ v1.7.5
+/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -459,7 +461,7 @@ __   __
   | / /
   |/ /
 /|  /
- |_/ v1.7.5
+ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -469,7 +471,7 @@ ______   __
  \__  | / /
  /_   |/ /
 /_  /|  /
- /_/ |_/ v1.7.5
+ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -479,7 +481,7 @@ ________   __
 __ \__  | / /
  / /_   |/ /
 / /_  /|  /
-_/ /_/ |_/ v1.7.5
+_/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -489,7 +491,7 @@ __________   __
   __ \__  | / /
  / / /_   |/ /
 /_/ /_  /|  /
-___/ /_/ |_/ v1.7.5
+___/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -501,7 +503,7 @@ ____________   __
 \_  __ \__  | / /
 /  / / /_   |/ /
 / /_/ /_  /|  /
-\____/ /_/ |_/ v1.7.5
+\____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -512,7 +514,7 @@ ______________   __
 _ \_  __ \__  | / /
 / /  / / /_   |/ /
 _// /_/ /_  /|  /
-| \____/ /_/ |_/ v1.7.5
+| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -523,7 +525,7 @@ ________________   __
  __ \_  __ \__  | / /
 /_/ /  / / /_   |/ /
 , _// /_/ /_  /|  /
-|_| \____/ /_/ |_/ v1.7.5
+|_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -534,7 +536,7 @@ ___________________   __
 __  __ \_  __ \__  | / /
 _  /_/ /  / / /_   |/ /
   _, _// /_/ /_  /|  /
-_/ |_| \____/ /_/ |_/ v1.7.5
+_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -546,7 +548,7 @@ ______________________   __
 __/__  __ \_  __ \__  | / /
   __  /_/ /  / / /_   |/ /
   _  _, _// /_/ /_  /|  /
-  /_/ |_| \____/ /_/ |_/ v1.7.5
+  /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -557,7 +559,7 @@ ________________________   __
   __/__  __ \_  __ \__  | / /
  /  __  /_/ /  / / /_   |/ /
 /   _  _, _// /_/ /_  /|  /
-    /_/ |_| \____/ /_/ |_/ v1.7.5
+    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -568,7 +570,7 @@ __________________________   __
 __  __/__  __ \_  __ \__  | / /
 _  /  __  /_/ /  / / /_   |/ /
   /   _  _, _// /_/ /_  /|  /
-_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -580,7 +582,7 @@ ____________________________   __
 ____  __/__  __ \_  __ \__  | / /
 ___  /  __  /_/ /  / / /_   |/ /
 __  /   _  _, _// /_/ /_  /|  /
-_/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -591,7 +593,7 @@ ______________________________   __
 ______  __/__  __ \_  __ \__  | / /
 _____  /  __  /_/ /  / / /_   |/ /
 ____  /   _  _, _// /_/ /_  /|  /
-___/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+___/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -602,7 +604,7 @@ ________________________________   __
 ________  __/__  __ \_  __ \__  | / /
 _______  /  __  /_/ /  / / /_   |/ /
 ______  /   _  _, _// /_/ /_  /|  /
-_____/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_____/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 sleep 0.05
@@ -614,7 +616,7 @@ __________________________________   __${pink}
 __________  __/__  __ \_  __ \__  | / /${green}
 _________  /  __  /_/ /  / / /_   |/ / ${red}
 ________  /   _  _, _// /_/ /_  /|  /  ${yellow}
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 
@@ -628,7 +630,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 
@@ -639,7 +641,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
                       made by Aristos with ♥
 $endc"""
 
@@ -650,7 +652,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 
@@ -661,7 +663,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
                       made by Aristos with ♥
 $endc"""
 
@@ -672,7 +674,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 
@@ -683,7 +685,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
                       made by Aristos with ♥
 $endc"""
 }
@@ -694,7 +696,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.5
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.6
 
 $endc"""
 }
@@ -884,8 +886,49 @@ function check_dependecies() {
         elif [[ $program == "rustup" && ( $os == "Debian" || $os == "Parrot" ) ]]
         then
             echo -e "${red}[-]${endc} $program not found in repositories. Using alternate installation method."
+            sleep 1
             echo -e "${blue}[*]${endc} Installing Rustup using official installer for $distro."
             install_rust_default
+        elif [[ $program == "apache2" ]]
+        then
+            while true
+            do
+                echo -ne "\033[F\r\033[K${blue}[*]${endc} Do you want to install apache2? [Y/n] "
+                read install_answer
+
+                if [[ $install_answer == "y" ]] || [[ $install_answer == "yes" ]] || [[ $install_answer == "Yes" ]] || [[ $install_answer == "Y" ]] || [[ $install_answer == "YES" ]]
+                then
+                    apt-get install apache2 -y
+                    break
+                elif [[ $install_answer == "n" ]] || [[ $install_answer == "no" ]] || [[ $install_answer == "No" ]] || [[ $install_answer == "N" ]] || [[ $install_answer == "NO" ]]
+                then
+                    has_apache2=0
+                    break
+                else
+                    echo -e "\033[F\r\033[K${red}[-]${endc} Not a valid answer!"
+                    sleep 1.5
+                fi
+            done
+        elif [[ $program == "xclip" ]]
+        then
+            while true
+            do
+                echo -ne "\033[F\r\033[K${blue}[*]${endc} Do you want to install xclip? [Y/n] "
+                read install_answer
+
+                if [[ $install_answer == "y" ]] || [[ $install_answer == "yes" ]] || [[ $install_answer == "Yes" ]] || [[ $install_answer == "Y" ]] || [[ $install_answer == "YES" ]]
+                then
+                    apt-get install xclip -y
+                    break
+                elif [[ $install_answer == "n" ]] || [[ $install_answer == "no" ]] || [[ $install_answer == "No" ]] || [[ $install_answer == "N" ]] || [[ $install_answer == "NO" ]]
+                then
+                    has_xclip=0
+                    break
+                else
+                    echo -e "\033[F\r\033[K${red}[-]${endc} Not a valid answer!"
+                    sleep 1.5
+                fi
+            done
         else
             apt-get install $program -y
         fi
@@ -902,7 +945,15 @@ function check_dependecies() {
         echo -n "> "
         sleep 0.2
         echo "ok"
-
+    elif [[ $program == "apache2" || $program == "xclip" ]]
+    then
+        echo -ne "${blue}[*]${endc}  $program "
+        sleep 0.2
+        echo -n "-"
+        sleep 0.2
+        echo -n "> "
+        sleep 0.2
+        echo "continue"
     else
         sleep 1
         echo -e "${red}[-]${endc} Cannot install $program"
@@ -942,7 +993,41 @@ EOF
 fi
 }
 
-function update_system() {
+function checking_internet {
+
+    echo -ne "${blue}[*]${endc} Checking Internet connection"
+    sleep 0.2
+    echo -n "."
+    sleep 0.2
+    echo -n "."
+    sleep 0.2
+    echo -n "."
+    sleep 0.2
+    echo "."
+
+    if 2>/dev/null >/dev/tcp/google.com/80; then
+        echo -e "\033[F\r\033[K${green}[+]${endc} Internet Ok!\n"
+        sleep 0.5
+    elif 2>/dev/null >/dev/tcp/8.8.8.8/53; then
+        echo -e "\033[F\r\033[K${red}[-]${endc} Something wrongs with the DNS!"
+        sleep 1
+        cleanup
+        echo -e "${red}Exiting..${endc}"
+        exit 1
+    else
+        echo -e "\033[F\r\033[K${red}[-]${endc} No internet connection!"
+        sleep 0.5
+        echo -e "${blue}[*]${endc} Unfortunately, this program cannot work without internet because Rust compilation needs to download dependencies."
+        sleep 1
+        echo -e "${blue}[*]${endc} We suggest arming it on a machine with internet access and transferring the build to the target victim machines."
+        sleep 1
+        cleanup
+        echo -e "${red}Exiting..${endc}"
+        exit 1
+    fi
+}
+
+function update_system {
     apt update -y
 }
 function updates() {
@@ -1397,16 +1482,23 @@ function setup_apache(){
         then
             if [[ $lport == "80" ]]
             then
-                echo -e "\033[F\r\033[K${red}[+]${endc} Apache cannot be set up because 80 has been used as listening port!"
+                echo -e "\033[F\r\033[K${red}[-]${endc} Apache cannot be set up because 80 has been used as listening port!"
                 sleep 2.5
                 break
             fi
-            echo -e "\033[F\r\033[K${green}[+]${endc} Setting up Apache2 server and transfering files"
             if [[ $os == "Azure" ]]
             then
                 service apache2 start
             else
                 systemctl start apache2.service
+                if [ $? -eq 0 ]; then
+                    echo -e "\033[F\r\033[K${green}[+]${endc} Setting up Apache2 server and transfering files"
+                else
+                    echo -e "${red}[-]${endc} Something went wrong with the apache service."
+                    cleanup
+                    echo -e "${red}Exiting..${endc}"
+                    exit 1
+                fi
             fi 
             server_path="/var/www/html/"
             sleep 2
@@ -1681,13 +1773,15 @@ function setup_meterpreter(){
     echo -e "${blue}[*]${endc} Run the following to catch the shell:\n"
 
     echo -e "${cyan}$cmd${endc}"
+    if [[ $has_xclip == 1 ]]
+    then
+        echo -e "$cmd" | xclip -selection clipboard 2>/dev/null
 
-    echo -e "$cmd" | xclip -selection clipboard 2>/dev/null
-
-    if [ $? -ne 0 ]; then
-        echo -e "${red}[!]${endc} Failed to copy to clipboard!"
-    else
-        echo -e "\n${green}[+]${endc} Message copied to clipboard!"
+        if [ $? -ne 0 ]; then
+            echo -e "${red}[!]${endc} Failed to copy to clipboard!"
+        else
+            echo -e "\n${green}[+]${endc} Message copied to clipboard!"
+        fi
     fi
 }
 
@@ -1721,10 +1815,20 @@ sleep 1.5
 check_root
 cleanup
 
-echo -e "\n${blue}[*]${endc} Checking dependencies..\n"
+clear
+stable_banner
+checking_internet
+sleep 1
+
+echo -e "${blue}[*]${endc} Performing Updates\n"
+update_system
+
+
+clear
+stable_banner
+echo -e "${blue}[*]${endc} Checking dependencies..\n"
 
 sleep 0.5
-update_system
 check_dependecies curl
 check_dependecies gcc
 check_dependecies gpg
@@ -1732,8 +1836,8 @@ check_dependecies apache2
 check_dependecies xclip
 check_dependecies rustup
 check_dependecies msfvenom
-updates
 
+updates
 
 clear
 banner
@@ -1742,8 +1846,10 @@ clear
 stable_banner
 read_port
 read_encryption
-setup_apache
-
+if [[ $has_apache2 == 1 ]]
+then
+    setup_apache
+fi
 create_pass $pass_w
 echo -e """\033[F\r\033[K
 ${green}Select an option from shell:${endc}
