@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-v1.7.6-blue.svg" alt="Version">
+  <img src="https://img.shields.io/badge/version-v1.7.7-blue.svg" alt="Version">
   <img src="https://img.shields.io/badge/language-bash-green.svg" alt="Bash">
   <img src="https://img.shields.io/badge/language-rust-orange.svg" alt="Rust">
   <img src="https://img.shields.io/badge/language-powershell-blueviolet.svg" alt="PowerShell">
@@ -26,6 +26,9 @@ Originally developed for internal penetration tests, TRON was built to reliably 
 ---
 
 ## 📝 Changelog
+
+### [v1.7.7]
+- **Added:** Non-root execution support (root privileges are no longer required to run the tool).
 
 ### [v1.7.6]
 - **Added:** Internet connectivity check. (Rust payload compilation requires an active connection, so the tool now verifies this before proceeding).
